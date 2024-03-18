@@ -1,0 +1,196 @@
+
+.menu-icon {  
+  display: none;
+  font-size: 27px; 
+  padding: 8px;
+  color: $icon-menu_color;     
+  z-index: 60;
+  border: none; 
+  border-radius: 5px; 
+  background: #4daec9;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  &:hover {
+    opacity: 0.6;
+    color: $icon-menu_hover;
+    transition: 0.4s; 
+    cursor: pointer;
+  }
+  @media screen and (max-width: $mobile-big_end-point) {
+    display: block;
+  }
+}
+
+.menu {  
+  display: flex;
+  flex-direction: row;      
+  justify-content: flex-end;            
+  align-items: center;  
+  @include menu;
+  font-weight: 400;
+  /*font-size: 16px;*/                 
+  @media screen and (max-width: $mobile-big_end-point) {
+    display: none;
+  }    
+  
+  &__list {
+    display: flex;
+    @media screen and (max-width: $mobile-big_end-point) {
+      display: block;
+    }
+  }
+  
+  &__list-item {
+    margin: 1.875em 1.25em 1.875em 1.25em; 
+    /*font-size: 1.125em;*/
+  }
+  
+  &__list-title {  
+    padding: 0.25em;      
+    border-radius: 0.37em; 
+    font-size: 1.12rem;  
+    font-weight: 400;                               
+    color: $link-menu_color; 
+    &:hover { 
+      transition: 0.4s ease;
+      color: $link-menu_hover;
+    }   
+  }
+  
+  &__list-title--active {
+    color: $link-menu-active_color;  
+    font-weight: 400;                    
+    cursor: default;
+    @media screen and (max-width: $mobile-big_end-point) {
+      position: relative;
+      &::after {
+        position: absolute;
+        content: '';
+        top: 0; 
+        left: 0;
+        bottom: 0; 
+        border-radius: 0.1em;
+        border: 0.1em solid $link-menu-active_color;
+        background: $link-menu-active_color;  
+      }
+    } 
+    &:hover { 
+      color: $link-menu-active_color;
+    } 
+  }
+
+  &--style_background {
+    /*&:hover {
+      transition: 0.7s ease;
+      background: rgba(0, 0, 0, 0.2); 
+    }*/
+  }
+
+  
+}
+ 
+@media screen and (max-width: $mobile-big_end-point) {
+  .menu-mobile {                
+    position: fixed; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+    top: 0;  
+    @include menu-location; 
+    bottom: 0;
+    
+    z-index: 50;
+    width: 320px;
+    box-shadow: 0px 2px 5px 0px rgba(79,79,79,0.4);
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(79,79,79,0.4);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(79,79,79,0.4);
+    @media screen and (max-width: 345px) {
+      width: 100%;
+    }
+    height: 100%;
+    overflow: auto;
+    background: rgba(256, 256, 256, 1);
+    .menu__list-item {
+      margin: 3.75em 0 3.75em -2.5em; 
+    }
+    .menu__list-title {  
+      padding: 0.43em 0.62em;
+      color: $link-menu-mobile_color;
+    }
+    .menu__list-title--active {  
+      color: $link-menu-active_color;
+    }
+
+    &:hover {
+      transition: 0.3s ease;
+      /*background: rgba(256, 256, 256, 0.9);*/ 
+    }   
+  }
+  
+}
+
+/* animation for mobile, layer */
+@media screen and (max-width: $mobile-big_end-point) {
+  .menu-visible {
+    animation: menu-visible forwards;
+    /*animation-duration: 1900ms;*/   
+  }
+  @keyframes menu-visible {
+    /*0% {opacity: 0;}
+    100% {opacity: 1;}*/
+    0% {opacity: 0.7;}
+    100% {opacity: 1;}
+    0% {@include anim-x;}
+    100% {transform: translateY(0);}
+  }
+
+  .menu-hidden {
+    animation: menu-hidden forwards;   
+    /*animation-duration: 1900ms;*/ 
+  }
+  @keyframes menu-hidden {
+    /*0% {opacity: 1;}
+    100% {opacity: 0;}*/
+    0% {opacity: 1;}
+    100% {opacity: 0.7;}
+    100% {@include anim-x;}
+    0% {transform: translateY(0);}
+  }  
+  
+}
+
+/* mobile layer */
+.mobile-layer { 
+  display: none;
+  position: fixed; 
+  
+  bottom: -100vh; 
+  @include mobile-layer; 
+  left: 0;
+  right: 0;
+  z-index: 45;
+  background: rgba(0, 0, 0, 0.5); 
+  /*animation-duration: 1900ms;*/ 
+}
+
+.mob-layer-on {
+  display: block;
+  cursor: pointer;
+  animation: mob-lr-on forwards;
+}
+@keyframes mob-lr-on {
+  0% {opacity: 0;}
+  100% {opacity: 1;}   
+}
+
+.mob-layer-off {
+  display: block;
+  cursor: pointer;
+  animation: mob-lr-off forwards;
+}
+@keyframes mob-lr-off {
+  0% {opacity: 1;}
+  100% {opacity: 0;}   
+}
+

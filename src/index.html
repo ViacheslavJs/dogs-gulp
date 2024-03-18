@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/layout/head.html', {
+    "title": "Home"
+  })
+  <body>
+    <div class="wrapper">
+      
+      @@include('html/layout/home-header.html', {}) 
+       
+      <!-- main page content -->      
+      <main class="main main--home">                              
+        <!-- TODO - module top -->
+          <section class="top">
+            <div class="container">
+
+              <div class="top__inner">
+                <div class="center">
+                  <h1 class="top__title">
+                    Help Your Dog Maintain A <span class="top__title-span">Healthier Weight</span> Width
+                  </h1>   
+                </div>
+              </div>
+
+            </div> 
+
+            <div class="top-alignment">
+              <img class="top__img-left" src="img/pack-top.png" alt="dogs pack">
+              <div id="banner" class="top__banner">
+                <img class="top__banner-base" src="img/reflection.png" alt="100% quality">
+                <img class="top__banner-fragment" src="img/1.png" alt="100% quality">
+              </div>
+              <img class="top__img-right" src="img/dog-top.png" alt="dog">
+            </div> 
+                         
+          </section>
+          
+          <!-- TODO - module s-01 -->
+          <section class="s-01">            
+            <div class="container">
+
+              <div class="s-01__inner">
+                <h2 class="s-01__title">
+                  our <span class="s-01__title-span">Story</span>
+                </h2>             
+                               
+                <p class="s-01__text center">Sed molestie ante justo, vel ultrices risus interdum sed. 
+                  Sed convallis sollicitudin imperdiet. Nulla congue leo ligula, quis dignissim 
+                  justo placerat ac. Mauris ut scelerisque purus. Praesent sollicitudin 
+                  vehicula sapien, non lobortis ex aliquet a. 
+                  <a class="s-01__link" href="">
+                    <span class="s-01__link-text">READ MORE</span>           
+                  </a>
+                </p>
+                
+                <img class="s-01__img-right" src="img/pack-section.png" alt="dogs pack">
+              </div><!-- s-01__inner -->
+
+            </div><!-- container -->                                               
+          </section><!-- module s-01 -->  
+
+        @@include('html/components/tape-carousel.html', {})     
+                                                                                                                                 
+      </main><!-- main page content -->
+      
+      @@include('html/layout/footer.html', {})  
+    </div><!-- wrapper -->
+    
+    <script src="js/app.min.js"></script> 
+
+  </body>
+</html>

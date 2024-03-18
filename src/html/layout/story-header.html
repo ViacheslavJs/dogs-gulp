@@ -1,0 +1,40 @@
+<header class="header">
+  <div class="mobile-layer"></div>
+  <div class="container">    
+    <div class="header__inner">
+      @@include('../components/logo.html', {}) 
+      <button class="menu-icon fas fa-bars"></button>
+      <nav class="menu">
+        <ul class="menu__list">
+          <li class="menu__list-item">
+            <a class="menu__list-link" href="shop-dog.html">
+              <span class="menu__list-title">Shop for dog</span>
+            </a>
+          </li>
+  
+          <li class="menu__list-item">
+            <a class="menu__list-link" href="shop-cat.html">
+              <span class="menu__list-title">Shop for cat</span>
+            </a>
+          </li>
+
+          <li class="menu__list-item">            
+              <span class="menu__list-title menu__list-title--active">Our story</span>           
+          </li>
+  
+          <li class="menu__list-item">
+            <a class="menu__list-link" href="contacts.html">
+              <span class="menu__list-title">Contact us</span>
+            </a>
+          </li>
+        </ul>
+        
+        @@include('../components/languages.html', {}) 
+        
+      </nav>
+    </div>
+  </div>
+  <hr class="header__line"> 
+</header>
+
+  
